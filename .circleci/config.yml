@@ -47,7 +47,4 @@ jobs:
 
       - run:
           name: Send to CodeCov
-          command: bash <(curl -s https://codecov.io/bash) -t 3675fc1e-1e6f-46a0-a35b-3a44fd205508
-
-      - codecov/upload:
-          file: target/surefire-reports/*
+          command: bash <(curl -s https://codecov.io/bash)
