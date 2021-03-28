@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - codecov/upload:
-          file: coverage/coverage-final.json
+          file: target/surefire-reports/*
 
       - checkout
 
