@@ -23,6 +23,9 @@ jobs:
       MAVEN_OPTS: -Xmx3200m
 
     steps:
+      - codecov/upload:
+          file: { { coverage_report_filepath } }
+          
       - checkout
 
       # Download and cache dependencies
@@ -44,9 +47,6 @@ jobs:
 
       - store_test_results:
           path: target/surefire-reports
-
-      - codecov/upload:
-          file: { { coverage_report_filepath } }
 
       - run:
           name: Send to CodeCov
